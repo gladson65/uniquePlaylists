@@ -28,9 +28,60 @@ function playlistGenerator() {
     const [ input, setInput ] = useState("");
     const [ playlists, setPlaylists ] = useState([]);
 
+    // handle playlists generator
+    function handleGenerator() {
+        let songs = input.split(",").map((song) => song.trim()).filter(Boolean);
+        let result =  uniquePlaylists(songs);
+        setPlaylists(result);
+    }
+
+
     return (
         <>
-        
+            <div className="header-section">
+                <h1>Unique Playlists Generator</h1>
+                <p>Enter song names separated by commas</p>
+
+                {/* input and the button div */}
+                <div className="inputButton">
+                    <input 
+                        type="text"
+                        value={input}
+                        onChange={(e)=> setInput(e.target.value)}
+                        placeholder="Shape of you, Blinding lights, Shape of you"
+                    />
+
+                    <button onClick={handleGenerator}>
+                        Generate Playlists
+                    </button>
+                </div>              
+            </div>
+
+            {/* display playlists */}
+            <div className="displayPlaylists">
+                {
+                    playlists.length > 0 ?
+                    <>
+                        {
+                            playlists.map((playlist, i) => {
+                                return (
+                                    <div key={i}>
+                                        {
+                                            playlist.length > 0 ? playlist.join("🎵") : "🎵 Empty playlist" 
+                                        }
+                                    </div>
+                                )
+                            })
+                        }
+                    </>
+                    :
+                    <>
+                    
+                    </>
+                }
+            </div>
+
+
         </>
     )
 }

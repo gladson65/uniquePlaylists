@@ -85,3 +85,5 @@ function playlistGenerator() {
         </>
     )
 }
+
+export default playlistGenerator;

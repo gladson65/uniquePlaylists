@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import playlistGenerator from './Components/PlaylistGenerator';
+import PlaylistGenerator from './Components/PlaylistGenerator';
 import './App.css'
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <playlistGenerator />
+      <PlaylistGenerator />
     </>
   )
 }

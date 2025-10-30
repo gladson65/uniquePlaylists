@@ -24,7 +24,7 @@ function uniquePlaylists(songs) {
 }
 
 // playlistGenerator function
-function playlistGenerator() {
+function PlaylistGenerator() {
     const [ input, setInput ] = useState("");
     const [ playlists, setPlaylists ] = useState([]);
 
@@ -86,4 +86,4 @@ function playlistGenerator() {
     )
 }
 
-export default playlistGenerator;
+export default PlaylistGenerator;
